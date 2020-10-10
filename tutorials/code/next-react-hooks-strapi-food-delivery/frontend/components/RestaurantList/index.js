@@ -38,6 +38,7 @@ function RestaurantList(props) {
     const searchQuery = data.restaurants.filter((query) =>
       query.name.toLowerCase().includes(props.search)
     );
+    console.log(JSON.stringify(searchQuery));
     if (searchQuery.length != 0) {
       return (
         <Row>
@@ -49,8 +50,8 @@ function RestaurantList(props) {
                   style={{ height: 250 }}
                   src={
                     process.env.NODE_ENV === "production"
-                      ? res.image[0].url
-                      : `${process.env.NEXT_PUBLIC_API_URL}${res.image[0].url}`
+                      ? res.image.url
+                      : `${process.env.NEXT_PUBLIC_API_URL}${res.image.url}`
                   }
                 />
                 <CardBody>

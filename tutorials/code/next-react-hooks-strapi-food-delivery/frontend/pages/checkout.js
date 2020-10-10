@@ -8,7 +8,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import InjectedCheckoutForm from "../components/checkout/CheckoutForm";
 import AppContext from "../context/AppContext";
 
-import Cart from "../components/cart/";
+import Cart from "../components/Cart/";
 
 function Checkout() {
   // get app context
@@ -17,7 +17,9 @@ function Checkout() {
   const { isAuthenticated } = appContext;
 
   // load stripe to inject into elements components
-  const stripePromise = loadStripe("YOUR STRIPE PUBLIC KEY pk_");
+  const stripePromise = loadStripe(
+    "pk_test_51HaLhVGgpfLkdZwmHVQcCOdUzwLWqV7umg9EbicemJqLOcLBPDrPtszruyxf4UzqH0lKwaNj5se3tHldNx92nPjI00Zoi8VgBN"
+  );
 
   return (
     <Row>

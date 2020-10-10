@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
 import { gql } from "apollo-boost";
 
-import Cart from "../components/cart/";
+import Cart from "../components/Cart/";
 import AppContext from "../context/AppContext";
 
 import {
@@ -39,10 +39,12 @@ const GET_RESTAURANT_DISHES = gql`
 function Restaurants() {
   const appContext = useContext(AppContext);
   const router = useRouter();
+
   const { loading, error, data } = useQuery(GET_RESTAURANT_DISHES, {
     variables: { id: router.query.id },
   });
-
+  console.log(`id: ${router.query.id}`);
+  console.log(JSON.stringify(data));
   if (error) return "Error Loading Dishes";
   if (loading) return <h1>Loading ...</h1>;
   if (data.restaurant) {

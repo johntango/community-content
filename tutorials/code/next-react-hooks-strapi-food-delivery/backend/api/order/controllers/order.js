@@ -1,13 +1,12 @@
 "use strict";
-
 /**
  * Order.js controller
  *
  * @description: A set of functions called "actions" for managing `Order`.
  */
-
-const stripe = require("stripe")("YOUR STRIPE SECRET KEY sk_");
-
+const stripe = require("stripe")(
+  "sk_test_51HaLhVGgpfLkdZwmmtP4YP0CYjzHEgzhNehfIm8m7cvzKnmek68toarKoYXMsutgu4pkbegopWRG6v9NaCkq65em00Elwbb2Wi"
+);
 module.exports = {
   /**
    * Create a/an order record.
